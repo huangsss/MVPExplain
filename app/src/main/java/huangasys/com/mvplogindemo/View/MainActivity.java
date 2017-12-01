@@ -54,4 +54,10 @@ public class MainActivity extends AppCompatActivity implements BaseView{
     public void loginFail(String msg) {
         showToast(msg);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.detachView();
+    }
 }
